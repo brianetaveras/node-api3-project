@@ -1,6 +1,7 @@
 // code away!
 const express = require('express');
 const postRoutes = require('./posts/postRouter');
+const userRoutes = require('./users/userRouter')
 const server = express();
 const logger = require('./middleware/logger')
 
@@ -15,7 +16,7 @@ server.get('/', (req, res)=>{
 })
 
 server.use('/api/posts/', postRoutes);
-
+server.use('/api/users/', userRoutes)
 
 server.listen(4001, ()=>{
 
