@@ -2,9 +2,11 @@
 const express = require('express');
 const postRoutes = require('./posts/postRouter');
 const server = express();
+const logger = require('./middleware/logger')
 
 
 server.use(express.json())
+server.use(logger())
 
 server.get('/', (req, res)=>{
     res.json({

@@ -4,6 +4,9 @@ const router = express.Router();
 
 router.get('/', (req, res) => {
   // do your magic!
+  res.json({
+    message: "Post home"
+  })
 });
 
 router.get('/:id', (req, res) => {
